@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "@enay-ui/eslint-config"
+  ]
+}

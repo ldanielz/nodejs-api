@@ -1,13 +1,11 @@
-import express, { response } from 'express'
-import { createCourse } from './routes';
+import express from 'express'
+import { categoriesRoutes } from './routes/categories.routes'
 
-const app = express();
+const app = express()
 
-app.use(express.json());
+app.use(express.json())
+app.use('/categories', categoriesRoutes)
 
-app.get('/', (req, res) => {
-  createCourse
-  return res.json({ hello: 'world' });
+app.listen(3000, () => {
+  console.log('Listening on port 3000...')
 })
-
-app.listen(3000)
