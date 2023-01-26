@@ -13,4 +13,10 @@ categoriesRoutes.post('/', (req: Request, res: Response) => {
   res.status(201).send()
 })
 
+categoriesRoutes.get('/', (req: Request, res: Response) => {
+  const all = categoriesRepository.list()
+
+  return res.status(200).json(all)
+})
+
 export { categoriesRoutes }
