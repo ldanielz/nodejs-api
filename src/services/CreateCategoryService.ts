@@ -1,4 +1,4 @@
-import { CategoriesRepository } from '../repositories/CategoriesRepository'
+import { ICategoriesRepository } from '../repositories/ICategoriesRepository'
 
 interface ICreateCategoryService {
   name: string
@@ -6,7 +6,7 @@ interface ICreateCategoryService {
 }
 
 export class CreateCategoryService {
-  constructor(private categoriesRepository: CategoriesRepository) {
+  constructor(private categoriesRepository: ICategoriesRepository) {
     console.log(categoriesRepository)
   }
 

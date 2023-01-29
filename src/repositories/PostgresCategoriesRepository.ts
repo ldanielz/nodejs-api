@@ -1,17 +1,22 @@
 import { Category } from '../models/Category'
-import { ICategoriesRepository } from './ICategoriesRepository'
+import {
+  ICategoriesRepository,
+  ICreateCategoryDTO,
+} from './ICategoriesRepository'
 
 class PostgresCategoriesRepository implements ICategoriesRepository {
   findByName(name: string): Category {
-    throw new Error('Method not implemented.')
+    console.log('PostgresCategoriesRepository:findByName', name)
+    return null
   }
 
   list(): Category[] {
-    throw new Error('Method not implemented.')
+    console.log('PostgresCategoriesRepository:list')
+    return null
   }
 
-  create(name: string, description: string): void {
-    throw new Error('Method not implemented.')
+  create({ name, description }: ICreateCategoryDTO): void {
+    console.log('PostgresCategoriesRepository:create', name, description)
   }
 }
 
