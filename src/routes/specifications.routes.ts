@@ -1,4 +1,4 @@
-import { SpecificationsRepository } from './../modules/cars/repositories/SpecificationsRepository'
+import { SpecificationsRepository } from '../modules/cars/repositories/implementations/SpecificationsRepository'
 import { Router } from 'express'
 import { CreateSpecificationsService } from '../modules/cars/services/CreateSpecificationService'
 
