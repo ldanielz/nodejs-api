@@ -1,16 +1,16 @@
-import { ICategoriesRepository } from '../repositories/ICategoriesRepository'
+import { ICategoriesRepository } from '../../repositories/ICategoriesRepository'
 
-interface ICreateCategoryService {
+interface ICreateCategoryUseCase {
   name: string
   description: string
 }
 
-export class CreateCategoryService {
+export class CreateCategoryUseCase {
   constructor(private categoriesRepository: ICategoriesRepository) {
     console.log(categoriesRepository)
   }
 
-  execute({ name, description }: ICreateCategoryService): void {
+  execute({ name, description }: ICreateCategoryUseCase): void {
     const categoryAlreadyExists = this.categoriesRepository.findByName(name)
 
     if (categoryAlreadyExists) {
