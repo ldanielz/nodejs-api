@@ -1,6 +1,19 @@
 version: '3.7'
 
 services:
+  database_enay:
+    image: postgres
+    container_name: database_enay
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=enay
+      - POSTGRES_DB=rentx
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
   app:
     build: .
     container_name: rentx
@@ -8,3 +21,9 @@ services:
       - 3000:3000
     volumes:
       - .:/usr/app
+    network_mode: host
+    
+
+volumes:
+  pgdata:
+    driver: local
