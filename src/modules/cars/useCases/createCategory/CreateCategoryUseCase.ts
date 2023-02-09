@@ -6,9 +6,8 @@ interface ICreateCategoryUseCase {
 }
 
 export class CreateCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {
-    console.log(categoriesRepository)
-  }
+  // eslint-disable-next-line no-useless-constructor
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
   execute({ name, description }: ICreateCategoryUseCase): void {
     const categoryAlreadyExists = this.categoriesRepository.findByName(name)

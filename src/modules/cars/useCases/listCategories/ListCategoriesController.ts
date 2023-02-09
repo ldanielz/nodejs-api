@@ -2,9 +2,8 @@ import { ListCategoriesUseCase } from './ListCategoriesUseCase'
 import { Request, Response } from 'express'
 
 export class ListCategoriesController {
-  constructor(private listCategoriesUseCase: ListCategoriesUseCase) {
-    console.log('constructor listCategoriesUseCase')
-  }
+  // eslint-disable-next-line no-useless-constructor
+  constructor(private listCategoriesUseCase: ListCategoriesUseCase) {}
 
   handle(req: Request, res: Response): Response {
     const all = this.listCategoriesUseCase.execute()

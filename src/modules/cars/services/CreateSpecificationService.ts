@@ -6,9 +6,8 @@ interface IRequest {
 }
 
 export class CreateSpecificationsService {
-  constructor(private specificationsRepository: ISpecificationsRepository) {
-    console.log('CreateSpecificationsService ctor')
-  }
+  // eslint-disable-next-line no-useless-constructor
+  constructor(private specificationsRepository: ISpecificationsRepository) {}
 
   execute({ name, description }: IRequest): void {
     const specificationAlreadyExists =

@@ -22,7 +22,6 @@ export class SpecificationsRepository implements ISpecificationsRepository {
   }
 
   create({ name, description }: ICreateSpecificationDTO): void {
-    console.log(name, description)
     const spec = new Specification()
 
     Object.assign(spec, {
@@ -36,7 +35,6 @@ export class SpecificationsRepository implements ISpecificationsRepository {
 
   findByName(name: string): Specification {
     const specification = this.specifications.find((spec) => spec.name === name)
-    console.log(name)
     return specification
   }
 

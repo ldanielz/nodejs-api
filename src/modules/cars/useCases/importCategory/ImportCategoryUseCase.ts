@@ -9,9 +9,8 @@ interface IImportCategory {
 }
 
 export class ImportCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {
-    console.log(categoriesRepository)
-  }
+  // eslint-disable-next-line no-useless-constructor
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
   loadCategories(file: Express.Multer.File): Promise<IImportCategory[]> {
     return new Promise((resolve, reject) => {

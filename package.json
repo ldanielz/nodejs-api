@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx --watch --inspect src/server.ts"
+    "dev": "tsx --watch --inspect src/server.ts",
+    "typeorm": "typeorm-ts-node-esm"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.1",
+    "ts-node": "^10.9.1",
     "tsx": "^3.12.2",
     "typescript": "^4.9.4"
   }
