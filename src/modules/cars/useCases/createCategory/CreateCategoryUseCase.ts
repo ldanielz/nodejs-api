@@ -1,15 +1,20 @@
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository'
 
+import { inject, injectable } from 'tsyringe'
+
 interface ICreateCategoryUseCase {
   name: string
   description: string
 }
-
+@injectable()
 export class CreateCategoryUseCase {
   // eslint-disable-next-line no-useless-constructor
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategoriesRepository,
+  ) {}
 
-  execute({ name, description }: ICreateCategoryUseCase): void {
+  async execute({ name, description }: ICreateCategoryUseCase): Promise<void> {
     const categoryAlreadyExists = this.categoriesRepository.findByName(name)
 
     if (categoryAlreadyExists) {
