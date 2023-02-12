@@ -1,19 +1,18 @@
-import { Request, Response } from 'express'
 import { CreateCategoryUseCase } from './CreateCategoryUseCase'
+import { Request, Response } from 'express'
+import { container } from 'tsyringe'
 
 export class CreateCategoryController {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(private createCategoryUseCase: CreateCategoryUseCase) {}
-
-  handle(req: Request, res: Response): Response {
+  async handle(req: Request, res: Response): Promise<Response> {
     const { name, description } = req.body
 
+    const createCategoryUseCase = container.resolve(CreateCategoryUseCase)
+
     try {
-      this.createCategoryUseCase.execute({ name, description })
+      createCategoryUseCase.execute({ name, description })
+      return res.status(201).send()
     } catch (error) {
       return res.status(400).json(error.message)
     }
-
-    return res.status(201).send()
   }
 }
