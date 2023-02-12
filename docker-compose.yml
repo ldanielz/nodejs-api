@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 services:
   database_enay:
@@ -13,16 +13,19 @@ services:
       - POSTGRES_DB=rentx
     volumes:
       - pgdata:/data/postgres
-    network_mode: host
+    
   app:
     build: .
     container_name: rentx
     ports:
       - 3000:3000
+      - 9229:9229
     volumes:
       - .:/usr/app
-    network_mode: host
-    
+    links:
+      - database_enay
+    depends_on:
+      - database_enay
 
 volumes:
   pgdata:

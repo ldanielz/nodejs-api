@@ -1,5 +1,5 @@
 import { Request } from 'express'
-import { Specification } from '../../models/Specification'
+import { Specification } from '../../entities/Specification'
 import { ISpecificationsRepository } from '../../repositories/ISpecificationRepository'
 
 export class ListSpecificationsUseCase {

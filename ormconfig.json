@@ -5,7 +5,9 @@
   "username": "docker",
   "password": "enay",
   "database": "rentx",
+  "migrations":[".src/database/migrations/*.ts"],
   "cli": {
     "migrationsDir": ".src/database/migrations"
   }
+  
 }
